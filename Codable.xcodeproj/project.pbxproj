@@ -13,7 +13,19 @@
 		27BBE754237A10DC00439E5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BBE752237A10DC00439E5E /* Main.storyboard */; };
 		27BBE756237A10DF00439E5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27BBE755237A10DF00439E5E /* Assets.xcassets */; };
 		27BBE759237A10DF00439E5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BBE757237A10DF00439E5E /* LaunchScreen.storyboard */; };
+		27BBE761237A111200439E5E /* Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBE760237A111100439E5E /* Codable.swift */; };
+		27BBE769237A150800439E5E /* CodableUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BBE768237A150800439E5E /* CodableUnitTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		27BBE76B237A150800439E5E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27BBE741237A10DC00439E5E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 27BBE748237A10DC00439E5E;
+			remoteInfo = Codable;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		27BBE749237A10DC00439E5E /* Codable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Codable.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +36,21 @@
 		27BBE755237A10DF00439E5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27BBE758237A10DF00439E5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27BBE75A237A10DF00439E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27BBE760237A111100439E5E /* Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codable.swift; sourceTree = "<group>"; };
+		27BBE766237A150800439E5E /* CodableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BBE768237A150800439E5E /* CodableUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableUnitTests.swift; sourceTree = "<group>"; };
+		27BBE76A237A150800439E5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		27BBE746237A10DC00439E5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		27BBE763237A150800439E5E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				27BBE74B237A10DC00439E5E /* Codable */,
+				27BBE767237A150800439E5E /* CodableTests */,
 				27BBE74A237A10DC00439E5E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				27BBE749237A10DC00439E5E /* Codable.app */,
+				27BBE766237A150800439E5E /* CodableTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,8 +88,18 @@
 				27BBE755237A10DF00439E5E /* Assets.xcassets */,
 				27BBE757237A10DF00439E5E /* LaunchScreen.storyboard */,
 				27BBE75A237A10DF00439E5E /* Info.plist */,
+				27BBE760237A111100439E5E /* Codable.swift */,
 			);
 			path = Codable;
+			sourceTree = "<group>";
+		};
+		27BBE767237A150800439E5E /* CodableTests */ = {
+			isa = PBXGroup;
+			children = (
+				27BBE768237A150800439E5E /* CodableUnitTests.swift */,
+				27BBE76A237A150800439E5E /* Info.plist */,
+			);
+			path = CodableTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +122,24 @@
 			productReference = 27BBE749237A10DC00439E5E /* Codable.app */;
 			productType = "com.apple.product-type.application";
 		};
+		27BBE765237A150800439E5E /* CodableTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27BBE76D237A150800439E5E /* Build configuration list for PBXNativeTarget "CodableTests" */;
+			buildPhases = (
+				27BBE762237A150800439E5E /* Sources */,
+				27BBE763237A150800439E5E /* Frameworks */,
+				27BBE764237A150800439E5E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				27BBE76C237A150800439E5E /* PBXTargetDependency */,
+			);
+			name = CodableTests;
+			productName = CodableTests;
+			productReference = 27BBE766237A150800439E5E /* CodableTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +152,10 @@
 				TargetAttributes = {
 					27BBE748237A10DC00439E5E = {
 						CreatedOnToolsVersion = 11.2;
+					};
+					27BBE765237A150800439E5E = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = 27BBE748237A10DC00439E5E;
 					};
 				};
 			};
@@ -116,6 +173,7 @@
 			projectRoot = "";
 			targets = (
 				27BBE748237A10DC00439E5E /* Codable */,
+				27BBE765237A150800439E5E /* CodableTests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +189,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27BBE764237A150800439E5E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -140,11 +205,28 @@
 			files = (
 				27BBE751237A10DC00439E5E /* ViewController.swift in Sources */,
 				27BBE74D237A10DC00439E5E /* AppDelegate.swift in Sources */,
+				27BBE761237A111200439E5E /* Codable.swift in Sources */,
 				27BBE74F237A10DC00439E5E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		27BBE762237A150800439E5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27BBE769237A150800439E5E /* CodableUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		27BBE76C237A150800439E5E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 27BBE748237A10DC00439E5E /* Codable */;
+			targetProxy = 27BBE76B237A150800439E5E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		27BBE752237A10DC00439E5E /* Main.storyboard */ = {
@@ -316,6 +398,46 @@
 			};
 			name = Release;
 		};
+		27BBE76E237A150800439E5E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EWSS9ZX7BZ;
+				INFOPLIST_FILE = CodableTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.avigit.CodableTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Codable.app/Codable";
+			};
+			name = Debug;
+		};
+		27BBE76F237A150800439E5E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EWSS9ZX7BZ;
+				INFOPLIST_FILE = CodableTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.avigit.CodableTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Codable.app/Codable";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -333,6 +455,15 @@
 			buildConfigurations = (
 				27BBE75E237A10DF00439E5E /* Debug */,
 				27BBE75F237A10DF00439E5E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		27BBE76D237A150800439E5E /* Build configuration list for PBXNativeTarget "CodableTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27BBE76E237A150800439E5E /* Debug */,
+				27BBE76F237A150800439E5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
