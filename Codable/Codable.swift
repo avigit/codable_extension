@@ -20,11 +20,11 @@ extension JSONDecoder {
 
 /// This extension help encode `Encodable` values into JSON using the given encoder.
 extension Encodable {
-    func toJSONData(encoder: JSONEncoder = JSONEncoder()) throws -> Data {
+    public func toJSONData(encoder: JSONEncoder = JSONEncoder()) throws -> Data {
         return try encoder.encode(self)
     }
     
-    func toJSONString(encoder: JSONEncoder = JSONEncoder()) throws -> String {
+    public func toJSONString(encoder: JSONEncoder = JSONEncoder()) throws -> String {
         let data = try self.toJSONData(encoder: encoder)
         guard let string = String(data: data, encoding: .utf8) else {
             let error = NSError(domain: String(describing: self), code: 0, userInfo: [NSLocalizedDescriptionKey : "Failed to parse string from the JSON data."])
@@ -34,7 +34,7 @@ extension Encodable {
         return string
     }
     
-    func toJSON(encoder: JSONEncoder = JSONEncoder()) throws -> Any {
+    public func toJSON(encoder: JSONEncoder = JSONEncoder()) throws -> Any {
         let data = try self.toJSONData(encoder: encoder)
         return try JSONSerialization.jsonObject(with: data, options: .allowFragments)
     }
@@ -43,11 +43,11 @@ extension Encodable {
 /// This extension help decode JSON representation using the given decoder.
 
 extension Decodable {
-    init(JSONData data: Data, decoder: JSONDecoder = JSONDecoder()) throws {
+    public init(JSONData data: Data, decoder: JSONDecoder = JSONDecoder()) throws {
         self = try decoder.decode(Self.self, from: data)
     }
     
-    init(JSONString jsonString: String, decoder: JSONDecoder = JSONDecoder()) throws {
+    public init(JSONString jsonString: String, decoder: JSONDecoder = JSONDecoder()) throws {
         guard let data = jsonString.data(using: .utf8) else {
             throw CodableExtensionError.invalidJSONString
         }
@@ -56,7 +56,7 @@ extension Decodable {
         self = obj
     }
     
-    init(JSON jsonObject: Any, decoder: JSONDecoder = JSONDecoder()) throws {
+    public init(JSON jsonObject: Any, decoder: JSONDecoder = JSONDecoder()) throws {
         
         let data = try JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted)
         let obj = try decoder.decode(Self.self, from: data)
@@ -157,7 +157,7 @@ extension KeyedEncodingContainer {
     }
     
     
-    mutating func encode(_ value: [String: Any], forKey key: KeyedEncodingContainer.Key) throws {
+    public mutating func encode(_ value: [String: Any], forKey key: KeyedEncodingContainer.Key) throws {
         
         var nestedContainer = self.nestedContainer(keyedBy: CodingKeys.self, forKey: key)
         
@@ -191,7 +191,7 @@ extension KeyedDecodingContainer {
         }
     }
     
-    func decode(_ type: [String: Any].Type, forKey key: KeyedDecodingContainer.Key) throws -> [String: Any] {
+    public func decode(_ type: [String: Any].Type, forKey key: KeyedDecodingContainer.Key) throws -> [String: Any] {
         
         let values = try self.nestedContainer(keyedBy: CodingKeys.self, forKey: key)
         return try values.decode(type)
